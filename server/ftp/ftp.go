@@ -25,7 +25,7 @@ var Commands = map[string]uint8{
 }
 
 var DefaultDir = map[string]string{
-	"windows": "C:/Users/Kylin/workspace/go/src/gobook/ch8",
+	"windows": "C:/Users/CL/go/src/gopl.io/ch8",
 	"unix":    "home/www",
 }
 
@@ -158,7 +158,7 @@ func (ftpCon *FtpServer) HandlePut(args []byte) error {
 		}
 		total += int64(n)
 		if (length - total) < bufSize {
-			buf = buf[0 : length-total]
+			buf = buf[:length-total]
 		}
 	}
 
@@ -202,7 +202,7 @@ func (ftpCon *FtpServer) HandleGet(args []byte) error {
 				return err
 			}
 		}
-		err = binary.Write(ftpCon.Con, binary.LittleEndian, buf[0:n])
+		err = binary.Write(ftpCon.Con, binary.LittleEndian, buf[:n])
 		if err != nil {
 			return err
 		}
@@ -218,7 +218,7 @@ func initUsers() {
 	}
 
 	// TODO 打开相对路径的问题
-	f, err := os.Open("C:/Users/Kylin/workspace/go/src/gobook/ch8/ex8.2/server/ftp/users")
+	f, err := os.Open(cwd + "/ex8.2/server/ftp/users")
 	if err != nil {
 		log.Fatal("failed to load users' information.", err)
 	}
