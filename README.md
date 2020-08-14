@@ -36,7 +36,7 @@ sync.Once.Do(initUsers()) // 读取../ex8.2/server/ftp/users文件缓存用户信息
 // 验证用户名和密码，返回验证结果true/false和验证通过后的用户家目录
 func Validate(name string, pwd string) (pass bool, home string) {...}
 ```
-> pass == false: return errcode  
+> pass == false: return ErrorCode  
 > pass == true:
 ```
 ftpCon := ftp.FtpConn{
