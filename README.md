@@ -1,11 +1,11 @@
 # SimpleFTP
 
-ÒªÇóÊµÏÖÒ»¸öftp·şÎñÆ÷£¬Ö§³Öcd£¬ls£¬put£¬getµÈÃüÁî£¬Ä¿Ç°ÊµÏÖÁËÓÃ»§Éí·İ¼òµ¥È·ÈÏ£¬»ñÈ¡¼ÒÄ¿Â¼ºó¿ÉÒÔ½øĞĞcd£¬ls£¬mkdirÒÔ¼°ÉÏ´«ºÍÏÂÔØÎÄ¼ş¡£
+è¦æ±‚å®ç°ä¸€ä¸ªftpæœåŠ¡å™¨ï¼Œæ”¯æŒcdï¼Œlsï¼Œputï¼Œgetç­‰å‘½ä»¤ï¼Œç›®å‰å®ç°äº†ç”¨æˆ·èº«ä»½ç®€å•ç¡®è®¤ï¼Œè·å–å®¶ç›®å½•åå¯ä»¥è¿›è¡Œcdï¼Œlsï¼Œmkdirä»¥åŠä¸Šä¼ å’Œä¸‹è½½æ–‡ä»¶ã€‚
 
->TODO£º
->- Î´ÊµÏÖÊäÈëÃÜÂëÊ±²»»ØÏÔ£¨ÀàËÆCÀïµÄgetpassº¯Êı£©£»
->- ²»Ö§³ÖÎÄ¼ş¼ĞµÄÉÏ´«ÓëÏÂÔØ£»
->- Î´ÊµÏÖÓëlinuxÓÃ»§È¨ÏŞ¹ÜÀí±£³ÖÒ»ÖÂ¡£
+>TODOï¼š
+>- æœªå®ç°è¾“å…¥å¯†ç æ—¶ä¸å›æ˜¾ï¼ˆç±»ä¼¼Cé‡Œçš„getpasså‡½æ•°ï¼‰ï¼›
+>- ä¸æ”¯æŒæ–‡ä»¶å¤¹çš„ä¸Šä¼ ä¸ä¸‹è½½ï¼›
+>- æœªå®ç°ä¸linuxç”¨æˆ·æƒé™ç®¡ç†ä¿æŒä¸€è‡´ã€‚
 
 
 ## ftp
@@ -24,16 +24,16 @@ binary.Write((w io.Writer, order ByteOrder, data interface{})
 ```
 
 ## server
-·şÎñ¶Ë
+æœåŠ¡ç«¯
 
 - init
 ```
-sync.Once.Do(initUsers()) // ¶ÁÈ¡../ex8.2/server/ftp/usersÎÄ¼ş»º´æÓÃ»§ĞÅÏ¢
+sync.Once.Do(initUsers()) // è¯»å–../ex8.2/server/ftp/usersæ–‡ä»¶ç¼“å­˜ç”¨æˆ·ä¿¡æ¯
 ```
 
 - validate
 ```
-// ÑéÖ¤ÓÃ»§ÃûºÍÃÜÂë£¬·µ»ØÑéÖ¤½á¹ûtrue/falseºÍÑéÖ¤Í¨¹ıºóµÄÓÃ»§¼ÒÄ¿Â¼
+// éªŒè¯ç”¨æˆ·åå’Œå¯†ç ï¼Œè¿”å›éªŒè¯ç»“æœtrue/falseå’ŒéªŒè¯é€šè¿‡åçš„ç”¨æˆ·å®¶ç›®å½•
 func Validate(name string, pwd string) (pass bool, home string) {...}
 ```
 > pass == false: return ErrorCode  
@@ -47,7 +47,7 @@ ftpCon := ftp.FtpConn{
 ftpServer := server.FtpServer{
     ftpCon,
 }
-// Ñ­»·¼àÌıÃüÁîÇëÇó
+// å¾ªç¯ç›‘å¬å‘½ä»¤è¯·æ±‚
 for !ftpServer.Exit{...}
 ```
 
@@ -83,18 +83,18 @@ func (ftpCon *FtpServer) HandleGet(args []byte) error {...}
 ```
 
 ## client
-¿Í»§¶Ë
+å®¢æˆ·ç«¯
 
 - login
 > Account: username@host
 > Password: password
 ```
-// Á¬½Óµ½ftp·şÎñÆ÷
+// è¿æ¥åˆ°ftpæœåŠ¡å™¨
 con, err := net.Dial("tcp", host)
 ```
 
 - op
 ```
-// ¼àÌıÃüÁîĞĞÊäÈë
+// ç›‘å¬å‘½ä»¤è¡Œè¾“å…¥
 for input.Scan() && !ftpClient.Exit {...}
 ```
