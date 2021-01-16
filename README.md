@@ -1,6 +1,6 @@
 # SimpleFTP
 
-要求实现一个ftp服务器，支持cd，ls，put，get等命令，目前实现了用户身份简单确认，获取家目录后可以进行cd，ls，mkdir以及上传和下载文件。
+要求实现一个FTP服务器，支持cd，ls，put，get等命令，目前实现了用户身份简单确认，获取家目录后可以进行cd，ls，mkdir以及上传和下载文件。
 
 >TODO：
 >- 未实现输入密码时不回显（类似C里的getpass函数）；
@@ -8,7 +8,7 @@
 >- 未实现与linux用户权限管理保持一致。
 
 
-## ftp
+## FTP
 Data Format  
 ```
 Format:   |TotalLength|              content             |
@@ -23,7 +23,7 @@ binary.Read((r io.Reader, order ByteOrder, data interface{})
 binary.Write((w io.Writer, order ByteOrder, data interface{})
 ```
 
-## server
+## Server
 服务端
 
 - init
@@ -82,7 +82,7 @@ func (ftpCon *FtpServer) HandlePut(args []byte) error {...}
 func (ftpCon *FtpServer) HandleGet(args []byte) error {...}
 ```
 
-## client
+## Client
 客户端
 
 - login
