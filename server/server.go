@@ -24,9 +24,11 @@ func main() {
 }
 
 func handleFunc(con net.Conn) {
-	defer con.Close()
-
 	ftpServer := NewServer(con, "", "")
+	if ftpServer == nil {
+		return
+	}
+	defer ftpServer.Close()
 
 	// 身份验证
 	// 读取用户名
