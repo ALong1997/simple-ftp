@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ace5d25-ed69-442d-bb49-e6bbef21d65b" name="Default Changelist" comment="" />
+    <list default="true" id="8ace5d25-ed69-442d-bb49-e6bbef21d65b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/server/ftp_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/ftp_server.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

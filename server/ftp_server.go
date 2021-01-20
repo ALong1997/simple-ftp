@@ -46,6 +46,9 @@ func (server *FTPServer) HandleLs(args []byte) error {
 	if strings.HasPrefix(cwd, "/") {
 		cwd = path.Join(server.Cwd, cwd)
 	}
+	if len(cwd) == 0 {
+		cwd = server.Cwd
+	}
 
 	f, err := os.Open(cwd)
 	if err != nil {
