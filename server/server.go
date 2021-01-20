@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	listener, err := net.Listen("tcp", "localhost:5900")
+	listener, err := net.Listen("tcp", common.Address)
 	if err != nil {
 		log.Fatal(err)
 	}

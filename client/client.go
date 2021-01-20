@@ -3,6 +3,7 @@ package main
 import (
 	"SimpleFTP/common"
 	"bufio"
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -13,15 +14,12 @@ const maxBinarySize = 4096
 const helpStr = "Help:\t[command] [args]\ncd [path]\n"
 
 func main() {
-	// 获取用户身份信息与 ftp 服务器 host 信息
-	if len(os.Args) < 2 {
+	// 获取用户身份信息
+	var user string
+	flag.StringVar(&user, "user", "", "user")
+	flag.Parse()
+	if len(user) == 0 {
 		log.Println(common.AuthenticationErr)
-		return
-	}
-
-	user, host, err := getUserAndHost(os.Args[1])
-	if err != nil {
-		fmt.Println(err)
 		return
 	}
 
@@ -33,7 +31,7 @@ func main() {
 	}
 
 	// 连接到ftp服务器
-	ftpClient, err := NewDail(host)
+	ftpClient, err := NewDail(common.Address)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -77,21 +75,4 @@ func main() {
 
 func printHelp() {
 	log.Printf(helpStr)
-}
-
-// inner function: get user and host from userInfo
-func getUserAndHost(userInfo string) (user string, host string, err error) {
-	if len(userInfo) == 0 || !strings.Contains(userInfo, "@") {
-		return user, host, common.AuthenticationErr
-	}
-
-	args := strings.Split(userInfo, "@")
-	user = args[0]
-	host = args[1]
-
-	if len(user) == 0 || len(host) == 0 {
-		return user, host, nil
-	}
-
-	return user, host, nil
 }
