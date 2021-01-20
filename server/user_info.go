@@ -34,7 +34,6 @@ func initUsers() {
 		log.Fatal("Unsupported system.")
 	}
 
-	// TODO 打开相对路径的问题
 	f, err := os.Open(cwd + "/users.txt")
 	if err != nil {
 		log.Fatal("failed to load users' information.", err)
