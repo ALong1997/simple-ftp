@@ -26,11 +26,7 @@ func main() {
 func handleFunc(con net.Conn) {
 	defer con.Close()
 
-	ftpServer := FTPServer{
-		common.FtpConn{
-			Con: con,
-		},
-	}
+	ftpServer := NewServer(con, "", "")
 
 	// 身份验证
 	// 读取用户名

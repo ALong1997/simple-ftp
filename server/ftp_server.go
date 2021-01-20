@@ -5,13 +5,26 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"net"
 	"os"
 	"path"
 	"strings"
 )
 
 type FTPServer struct {
-	common.FtpConn
+	*common.FtpConn
+}
+
+// New FTPServer
+func NewServer(con net.Conn, cwd, home string) *FTPServer {
+	return &FTPServer{
+		&common.FtpConn{
+			Con:  con,
+			Cwd:  cwd,
+			Home: home,
+			Exit: false,
+		},
+	}
 }
 
 // Handle cd
