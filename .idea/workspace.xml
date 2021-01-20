@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8ace5d25-ed69-442d-bb49-e6bbef21d65b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/SimpleFTP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/ftp_client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/command.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/ftp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/ftp_server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/user_info.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ftp/ftp.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ftp/ftp.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/ftp/ftp.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="ngm3jqdg" />
+  </component>
+  <component name="ProjectId" id="1nEkd8wFhJDbyElVWWbhwwMeh3p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build SimpleFTP/client">
+    <configuration name="go build SimpleFTP/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="SimpleFTP" />
+      <working_directory value="$PROJECT_DIR$" />
+      <parameters value="ALong@localhost:5900" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/client/client.go" />
+      <package value="SimpleFTP/client" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build SimpleFTP/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="SimpleFTP" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/server/server.go" />
+      <package value="SimpleFTP/server" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.go build SimpleFTP/client" />
+      <item itemvalue="Go Build.go build SimpleFTP/server" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build SimpleFTP/client" />
+        <item itemvalue="Go Build.go build SimpleFTP/server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611129467874">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129467874" />
+    <state width="504" height="466" key="DebuggerActiveHint" timestamp="1611129448912">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="504" height="466" key="DebuggerActiveHint/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129448912" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1611128324852">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="DiffContextDialog/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611128324852" />
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1611129801346">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129801346" />
+    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1611129801346">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.0.center/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129801346" />
+    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1611129801346">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.0.left/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129801346" />
+    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1611129801346">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.0.right/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129801346" />
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1611129801347">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129801347" />
+    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1611129801347">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.center/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129801347" />
+    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1611129801347">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.left/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129801347" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1611129801347">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.right/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611129801347" />
+    <state x="793" y="221" key="RollbackChangesDialog" timestamp="1611128327972">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="793" y="221" key="RollbackChangesDialog/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611128327972" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1611055625903">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611055625903" />
+  </component>
+</project>

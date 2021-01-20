@@ -1,84 +1,30 @@
 package main
 
 import (
+	"SimpleFTP/common"
 	"bufio"
-	"encoding/binary"
-	"errors"
 	"fmt"
 	"log"
-	"net"
 	"os"
 	"strings"
-
-	"gopl.io/ch8/ex8.2/client/ftp"
-	"gopl.io/ch8/ex8.2/ftp"
 )
 
-func printHelp() {
-	log.Println("Help:\t[command] [args]\ncd [path]\n")
-}
-
-func handleCommand(ftpCon *client.FtpClient, command string, args []string) (err error) {
-	cmdid, ok := ftp.Commands[command]
-	if !ok {
-		return errors.New("unsupported command\n")
-	}
-	err = ftpCon.WriteCommand(cmdid, args)
-	if err != nil {
-		return err
-	}
-
-	if cmdid == ftp.Commands["get"] {
-		err = ftpCon.HandleGet(args[0])
-		if err != nil {
-			return err
-		}
-	}
-
-	var length uint32
-	err = binary.Read(ftpCon.Con, binary.LittleEndian, &length)
-	if err != nil {
-		return err
-	}
-	if length == 0 {
-		fmt.Printf("\n%s:", ftpCon.Cwd)
-		return nil
-	}
-
-	res := make([]byte, length-uint32(binary.Size(length)))
-	err = binary.Read(ftpCon.Con, binary.LittleEndian, res)
-	if err != nil {
-		return err
-	}
-	if cmdid == ftp.Commands["cd"] {
-		ftpCon.Cwd = ftp.Sbyte2str(res)
-		fmt.Printf("\n%s:", ftpCon.Cwd)
-		return nil
-	}
-	if cmdid == ftp.Commands["exit"] {
-		ftpCon.Exit = true
-		fmt.Printf("%s\n", ftp.Sbyte2str(res))
-		return nil
-	}
-
-	fmt.Printf("%s\n%s:", ftp.Sbyte2str(res), ftpCon.Cwd)
-	return
-}
+const maxBinarySize = 4096
+const helpStr = "Help:\t[command] [args]\ncd [path]\n"
 
 func main() {
-	// 获取用户身份信息与ftp服务器host信息
+	// 获取用户身份信息与 ftp 服务器 host 信息
 	if len(os.Args) < 2 {
-		fmt.Println("无法通过身份认证")
+		log.Println(common.AuthenticationErr)
 		return
 	}
-	arg := os.Args[1]
-	if !strings.Contains(arg, "@") {
-		fmt.Println("无法通过身份认证")
+
+	user, host, err := getUserAndHost(os.Args[1])
+	if err != nil {
+		fmt.Println(err)
 		return
 	}
-	args := strings.Split(arg, "@")
-	user := args[0]
-	host := args[1]
+
 	fmt.Print("Password:")
 	var pwd string
 	input := bufio.NewScanner(os.Stdin)
@@ -87,70 +33,65 @@ func main() {
 	}
 
 	// 连接到ftp服务器
-	con, err := net.Dial("tcp", host)
+	ftpClient, err := NewDail(host)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	defer con.Close()
-	ftpCon := ftp.FtpConn{
-		Con: con,
+	if ftpClient == nil {
+		return
 	}
-	ftpClient := client.FtpClient{
-		ftpCon,
-	}
+	defer ftpClient.Close()
 
-	// 身份验证
-	err = ftpClient.Write(ftp.Str2sbyte(user))
+	// 用户认证
+	err = ftpClient.Auth(user, pwd)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	err = ftpClient.Write(ftp.Str2sbyte(pwd))
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	var res uint32
-	err = binary.Read(con, binary.LittleEndian, &res)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	if res == 0 {
-		fmt.Println("认证失败")
-		return
-	}
-
-	cwd := make([]byte, res)
-	err = binary.Read(con, binary.LittleEndian, cwd)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	ftpClient.Cwd = ftp.Sbyte2str(cwd)
-	ftpClient.Home = ftpCon.Cwd
-	fmt.Println(ftpClient.Cwd, ":")
 
 	// 监听命令行输入
 	for input.Scan() && !ftpClient.Exit {
-		argstr := input.Text()
-		args := strings.Split(strings.TrimSpace(argstr), " ")
+		text := input.Text()
+		args := strings.Split(strings.TrimSpace(text), " ")
 		if len(args) == 0 {
 			printHelp()
 			continue
 		}
+
 		command := args[0]
 		if len(args) > 1 {
 			args = args[1:]
 		} else {
 			args = nil
 		}
-		err = handleCommand(&ftpClient, command, args)
+
+		err = ftpClient.handleCommand(command, args)
 		if err != nil {
 			log.Println(err)
 		}
 	}
 
+	return
+}
+
+func printHelp() {
+	log.Printf(helpStr)
+}
+
+// inner function: get user and host from userInfo
+func getUserAndHost(userInfo string) (user string, host string, err error) {
+	if len(userInfo) == 0 || !strings.Contains(userInfo, "@") {
+		return user, host, common.AuthenticationErr
+	}
+
+	args := strings.Split(userInfo, "@")
+	user = args[0]
+	host = args[1]
+
+	if len(user) == 0 || len(host) == 0 {
+		return user, host, nil
+	}
+
+	return user, host, nil
 }
