@@ -17,7 +17,7 @@ type userInfo struct {
 }
 
 var defaultDir = map[string]string{
-	"windows": "D:/ALong1108/SimpleFTP/server",
+	"windows": "D:/ALong1108/SimpleFTP/server/db",
 	"unix":    "home/xxx",
 }
 

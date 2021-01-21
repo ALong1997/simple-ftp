@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8ace5d25-ed69-442d-bb49-e6bbef21d65b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/ftp_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/ftp_server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/user_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/user_info.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/users.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +64,11 @@
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ALong1108\SimpleFTP\server\db" />
+    </key>
   </component>
   <component name="RunManager" selected="Go Build.go build SimpleFTP/client">
     <configuration name="go build SimpleFTP/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -109,15 +115,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611133984801">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611227565466">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611133984801" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611227565466" />
     <state width="504" height="466" key="DebuggerActiveHint" timestamp="1611129448912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -126,22 +133,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="DiffContextDialog/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611128324852" />
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1611134194095">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1611135282524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611134194095" />
-    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1611134194094">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611135282524" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1611135282521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.center/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611134194094" />
-    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1611134194093">
+    <state width="1877" height="274" key="GridCell.Tab.0.center/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611135282521" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1611135282521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.left/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611134194093" />
-    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1611134194095">
+    <state width="1877" height="274" key="GridCell.Tab.0.left/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611135282521" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1611135282522">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.right/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611134194095" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right/793.1080.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611135282522" />
     <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1611134194098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

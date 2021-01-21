@@ -86,8 +86,11 @@ func (ftpCon *FtpServer) HandleGet(args []byte) error {...}
 客户端
 
 - login
-> Account: username@host
-> Password: password
+> Account:
+>```
+>go run -user user
+>```
+
 ```
 // 连接到ftp服务器
 con, err := net.Dial("tcp", host)
